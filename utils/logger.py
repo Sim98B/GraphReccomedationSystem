@@ -4,7 +4,6 @@ def setup_logging(level=logging.INFO):
     """
     Setup logging configuration
     :param level: logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    :param log_file: log file path
     """
     log_format = '[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s'
     logging.basicConfig(

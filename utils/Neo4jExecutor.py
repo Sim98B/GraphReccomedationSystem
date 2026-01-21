@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 from neo4j import GraphDatabase
-import logger
 import logging
 from utils.logger import setup_logging
 
@@ -70,3 +69,10 @@ for r in records:
 
 executor.close()
 """
+
+executor = Neo4jExecutor()
+
+# Esempio: recupera tutti i vini di tipo "rosso"
+query = "MATCH (w:Wine) WHERE w.type = $type RETURN w.name AS name, w.rating AS rating"
+params = {"type": "rosso"}
+records = executor.run_query(query, params)
